@@ -1,10 +1,15 @@
 <mat-toolbar color="primary">
   <span>SlivoVits</span>
 </mat-toolbar>
-<mat-card *ngFor="let datum of data" class="example-card">
-  <mat-card-content>
-    <p>
-      {{ datum.title }}
-    </p>
-  </mat-card-content>
-</mat-card>
+
+<mat-drawer-container class="example-container" autosize>
+  <div class="example-sidenav-content">
+    <mat-card *ngFor="let datum of data" class="example-card">
+      <mat-card-content>
+        <p>
+          {{ datum.title }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</mat-drawer-container>

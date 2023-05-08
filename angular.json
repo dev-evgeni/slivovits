@@ -106,8 +106,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "https://dev-evgeni.github.io/slivovits/",
-            "repo": "https://github.com/dev-evgeni/slivovits.git"
+            "baseHref": "/slivovits/"
           }
         }
       }

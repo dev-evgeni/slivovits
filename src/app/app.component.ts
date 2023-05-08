@@ -8,14 +8,11 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'SlivoVits';
   data: any;
 
   private URL = 'assets/data.json';
 
   mobileQuery: MediaQueryList;
-
-  fillerNav = ['Home'];
 
   private readonly _mobileQueryListener: () => void;
 

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { HttpClient  } from '@angular/common/http';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -12,11 +13,25 @@ export class AppComponent {
 
   private URL = 'assets/data.json';
 
-  constructor(private httpClient: HttpClient) {}
+  mobileQuery: MediaQueryList;
+
+  fillerNav = ['Home'];
+
+  private readonly _mobileQueryListener: () => void;
+
+  constructor(private httpClient: HttpClient, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+  }
 
   ngOnInit() {
     this.httpClient.get(this.URL).subscribe(
       data => this.data = data
     );
+  }
+
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 }

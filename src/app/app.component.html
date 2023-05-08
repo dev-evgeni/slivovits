@@ -1,5 +1,6 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+  <app-header (sidenavToggle)="sidenav.toggle()" class="example-toolbar"></app-header>
+
   <mat-sidenav-container class="example-sidenav-container"
                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"

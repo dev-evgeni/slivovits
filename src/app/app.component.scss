@@ -26,6 +26,10 @@
   right: 0;
 }
 
+.example-toolbar {
+  width: 100%;
+}
+
 .example-is-mobile .example-toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */

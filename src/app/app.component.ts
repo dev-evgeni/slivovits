@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'SlivoVits';
   data: any;
 
-  private URL = '../assets/data.json';
+  private URL = 'assets/data.json';
 
   constructor(private httpClient: HttpClient) {}
 

@@ -1,0 +1,31 @@
+<mat-expansion-panel expanded="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Filter by categories:
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <form>
+    <mat-form-field class="example-chip-list">
+      <mat-label>Selected categories</mat-label>
+      <mat-chip-grid #chipGrid>
+        <mat-chip-row *ngFor="let category of categories" (removed)="remove(category)">
+          {{category}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+      </mat-chip-grid>
+      <input placeholder="New category..." #categoryInput [formControl]="categoryCtrl"
+             [matChipInputFor]="chipGrid" [matAutocomplete]="auto"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             (matChipInputTokenEnd)="add($event)"/>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let category of filteredCategories | async" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+</mat-expansion-panel>

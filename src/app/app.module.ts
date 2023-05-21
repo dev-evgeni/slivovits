@@ -7,19 +7,23 @@ import { AppComponent } from './app.component';
 import { MaterialCustomModule } from "../material.module";
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { FilterComponent } from './filter/filter.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialCustomModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatChipsModule } from "@angular/material/chips";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
 
 @NgModule({
   exports: [
@@ -18,6 +22,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatRippleModule,
     MatSidenavModule,
     MatToolbarModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatChipsModule,
+    MatAutocompleteModule,
   ]
 })
 export class MaterialCustomModule {
